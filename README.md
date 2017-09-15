@@ -3,7 +3,10 @@
 Given an array of money, an array of miles, a budget value, maximize the amount of miles that can be achieved while keeping the budget > 0 from the money spent. Choosing an index earns the amount of miles on that index and loses the amount of money also on that index. No consecutive indexes can be chosen.
 
 This can be reduced to a 0/1 knapsack problem with an additional constraint of no consecutive indexes being selected. The budget would be analogous to the weight that the bag can handle, the money would be the weight, and the miles would be the value. More information can be found [here](http://www.geeksforgeeks.org/knapsack-problem/) and also [here](https://stackoverflow.com/questions/14255704/knapsack-variation-in-dynamic-programming). 
---------------------------------------------------------------------------------------------------------------
+
+
+*******************************************************************************************
+
 main.cc is a C++ implementation to solve this problem, g++ compiler is used  - e.g. g++ main.cc -o main
 
 test.cc creates all the tests, change the constant variables at the top of the file to tweak the number of tests and the different factors of the test cases
