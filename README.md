@@ -12,6 +12,8 @@ run ./InputToOutput suiteFile ./main in the testFolder to generate all the outpu
 
 run time ./runSuite suiteFile ./main in the testFolder to check the program by the tests and prints out the time required, main would be replaced by people's submission of any language
 
+When creating a whole new set of tests and not overwrite previous tests, create a new folder, compile test.cc, move compiled test.cc to folder, run program, compile main.cc move compiled main.cc to folder, run run ./InputToOutput suiteFile ./main and then run time ./runSuite suiteFile ./main to make sure everything is fine. 
+
 a Test Case's structure is inputting
 budget Number
 Length of Array
