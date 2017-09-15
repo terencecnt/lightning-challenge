@@ -18,20 +18,35 @@ run time ./runSuite suiteFile ./main in the testFolder to check the program by t
 When creating a whole new set of tests and not overwrite previous tests, create a new folder, compile test.cc, move compiled test.cc to folder, run program, compile main.cc move compiled main.cc to folder, run ./InputToOutput suiteFile ./main and then run time ./runSuite suiteFile ./main to make sure everything is fine. 
 
 a Test Case's structure is inputting
+
 budget Number
+
 Length of Array
+
 Money at index 0
+
 Money at index 1
+
 .
+
 .
+
 .
+
 Money at index Length of Array - 1
+
 Miles at index 0
+
 Miles at index 1
+
 Miles at index 2
+
 .
+
 .
+
 .
+
 Miles at index Length of Array - 1
 
 and the user would be required to print out the solution
