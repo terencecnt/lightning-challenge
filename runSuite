@@ -1,0 +1,38 @@
+#!/bin/bash
+error_message () {
+ echo "Failed"
+ exit 1
+}
+
+if [ -z ${1} ] || [ -z ${2} ]
+ then 
+   error_message
+ else
+   while read line
+   do
+    if [ ! -f "${line}.in" ] || [ ! -f "${line}.out" ]
+     then
+      error_message
+     else
+      tmpfile=$(mktemp)
+      if [ -f "${line}.args" ]
+        then 
+         ${2} $(cat "${line}.args") < "${line}.in" > tmpfile
+        else
+         ${2} < "${line}.in" > tmpfile
+      fi
+      diff tmpfile "${line}.out" > /dev/null
+      if [ $?  -ne  0 ]
+        then
+         echo "Test failed: ${line}"
+         echo "Input:"
+         cat "${line}.in"
+         echo "Expected:"
+         cat "${line}.out"
+         echo "Actual:"
+         cat tmpfile
+         rm tmpfile
+      fi
+    fi
+   done < ${1}
+fi

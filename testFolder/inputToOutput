@@ -1,0 +1,25 @@
+#!/bin/bash
+error_message () {
+ echo "Failed"
+ exit 1
+}
+
+if [ -z ${1} ] || [ -z ${2} ]
+ then 
+   error_message
+ else
+   while read line
+   do
+    if [ ! -f "${line}.in" ]
+     then
+      error_message
+     else
+      if [ -f "${line}.args" ]
+        then 
+         ${2} $(cat "${line}.args") < "${line}.in" > "${line}.out"
+        else
+         ${2} < "${line}.in" > "${line}.out"
+      fi
+    fi
+   done < ${1}
+fi
