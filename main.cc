@@ -18,7 +18,7 @@ int maximizingMiles(int budget, vector<int> money, vector<int> miles)
                 if (i == 1) {
                     maximumMiles[i][b] = miles[i-1];
                 } else {
-                    maximumMiles[i][b] = max(miles[i-1] + maximumMiles[i-2][budget - money[i-1]],  maximumMiles[i-1][b]);
+                    maximumMiles[i][b] = max(miles[i-1] + maximumMiles[i-2][b - money[i-1]],  maximumMiles[i-1][b]);
                 }
             else {
                 maximumMiles[i][b] = maximumMiles[i-1][b];
